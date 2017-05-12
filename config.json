@@ -1,0 +1,13 @@
+{
+  "browsertime": {
+    "iterations": 1,
+    "speedIndex": true,
+    "video": true
+  },
+  "crawler": {
+    "depth": 1
+  },
+  "plugins": {
+    "load": ["analysisstorer"]
+  }
+}
