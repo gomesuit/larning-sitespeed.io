@@ -13,5 +13,11 @@ docker-compose run sitespeed.io https://www.sitespeed.io/ --graphite.host=graphi
 # Access the dashboard: http://127.0.0.1:3000
 ```
 
-
-
+```
+実行回数を指定
+-n 1
+モバイル版
+--mobile
+各jsonデータを保存
+--plugins.load analysisstorer
+```
