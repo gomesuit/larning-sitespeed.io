@@ -8,6 +8,6 @@
     "depth": 1
   },
   "plugins": {
-    "load": ["analysisstorer"]
+    "load": ["analysisstorer", "my-custom-plugin"]
   }
 }
