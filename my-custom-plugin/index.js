@@ -1,4 +1,5 @@
 const path = require('path');
+const util = require('util');
 
 function shouldIgnoreMessage(message) {
   return ['url', 'error', 'summarize','browsertime.screenshot', 'browsertime.har', 'webpagetest.har'].indexOf(message.type) >= 0;
@@ -16,6 +17,8 @@ module.exports = {
     // generated at runtime, for example you can get hold of the storageManager
     // that stores files to disk.
     // The options is the configuration supplied for the run.
+    console.log(`context: \n${util.inspect(context,false,null)}`);
+    console.log(`options: \n${util.inspect(options,false,null)}`);
   },
   processMessage(message, queue) {
     if (shouldIgnoreMessage(message)) {
@@ -26,18 +29,23 @@ module.exports = {
     }
     // The plugin will get all messages sent through the queue
     // and can act on specific messages by type:
-    // message.type
+    console.log(`message: \n${util.inspect(message,false,null)}`);
+    // console.log(`queue: \n${util.inspect(queue,false,null)}`);
     const jsonData = JSON.stringify(message.data);
-    console.log(message.type);
-    console.log(message.group);
-    console.log(message.url);
-    console.log(message.runIndex);
-    // console.log(message);
-    console.log(jsonData);
+    // console.log(`message: ${message}`);
+    // console.log(`message.type: ${message.type}`);
+    // console.log(`message.group: ${message.group}`);
+    // console.log(`message.url: ${message.url}`);
+    // console.log(`message.runIndex: ${message.runIndex}`);
+    // console.log(`message.data: ${message.data}`);
+    // console.log(jsonData);
+    // console.log(`jsonData: ${jsonData}`);
   },
   close(options, errors) {
     // When all URLs are finished all plugins close function is called once.
     // Options are the configuration options and errors a array of errors
     // from the run.
+    console.log(`options: \n${util.inspect(options,false,null)}`);
+    console.log(`errors: \n${util.inspect(errors,false,null)}`);
   }
 };
