@@ -6,7 +6,6 @@ docker run --shm-size=1g --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io
 docker run --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io https://www.sitespeed.io/ --config config.json
 ```
 
-
 ## Performance Dashboard
 ```
 docker-compose up -d

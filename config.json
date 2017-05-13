@@ -9,5 +9,8 @@
   },
   "plugins": {
     "load": ["analysisstorer", "my-custom-plugin"]
+  },
+  "slack": {
+    "hookUrl": "https://<your team>.slack.com/apps/manage/custom-integrations"
   }
 }
